@@ -6,16 +6,22 @@
     <title>Responsive Design Report</title>
     <style>
         :root {
+            /* General Settings */
+            --pixel: 0.0625rem; /* Pixel variable (1px) */
             /* Typography Settings */
             --app-font-size: 16px;
 
             /* Box Settings */
             --app-layout-width: 90%;
-            --app-gap: 0.625rem; /* Gap variable (10px) */
-            --app-padding: 0.625rem; /* Padding variable (10px) */
+            --app-spacing: 0.3125rem; /* Spacing variable (10px) */
+            --app-padding: var(--app-spacing); /* Padding variable (5px) */
+            --app-margin: var(--app-spacing); /* Margin variable (5px) */
+            --app-min-row-height: minmax(calc(var(--app-spacing) * 10), auto); /* Minimum row height variable (100px) */
+            --app-border-width: calc(var(--app-spacing) * 0.2); /* Border width variable (1px) */
 
             /* Color Settings */
             --app-border-color: #ccc; /* Border color variable */
+            --body-bg-color: #f5f5f5; /* Light neutral background color */
         }
 
         @media (max-width: 1200px) {
@@ -41,11 +47,17 @@
                 --app-font-size: 12px;
             }
         }
-
+        html {
+            font-size: var(--app-font-size);
+        }
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            background-color: var(--body-bg-color);
         }
 
         /* Layout Container */
@@ -54,8 +66,9 @@
             width: var(--app-layout-width);
             height: 100vh;
             margin: 0 auto;
-            grid-template-rows: repeat(auto-fill, minmax(6.25rem, auto)); /* 100px to rem */
-            gap: var(--app-gap); /* Using the gap variable */
+            grid-template-rows: repeat(auto-fill, var(--app-min-row-height)); /* 50px to rem */
+            gap: var(--app-spacing); /* Using the gap variable */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 -4px 6px rgba(0, 0, 0, 0.1);
         }
 
         /* General Container */
@@ -69,18 +82,7 @@
             justify-content: space-between;
             align-items: center;
             padding: var(--app-padding); /* Using the padding variable */
-            border: 0.0625rem solid var(--app-border-color); /* Using the border color variable */
-        }
-
-        /* Media Query Report Styling */
-        #media-query-report {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
+            border: var(--app-border-width) solid var(--app-border-color); /* Using the border color variable */
         }
     </style>
 </head>
@@ -102,33 +104,62 @@
     
     <script>
         function createReportDiv() {
-            const reportDiv = document.createElement('div');
-            reportDiv.id = 'media-query-report';
-            document.body.appendChild(reportDiv);
+            var mediaQueryReport = document.createElement("div");
+            mediaQueryReport.id = "media-query-report";
+            document.body.appendChild(mediaQueryReport);
+
+            // Add styles dynamically
+            var style = document.createElement('style');
+            style.innerHTML = `
+                #media-query-report {
+                    position: fixed;
+                    bottom: 0;
+                    width: 100%;
+                    background: rgba(0, 0, 0, 0.7);
+                    color: #fff;
+                    padding: 1rem;
+                    text-align: center;
+                    z-index: 1000;
+                }
+            `;
+            document.head.appendChild(style);
         }
 
         function reportMediaQueryChanges() {
             const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
             const reportDiv = document.getElementById('media-query-report');
-            
-            let message = `Current root font size: ${rootFontSize}px - `;
 
-            if (rootFontSize === 16) {
-                message += "Media query: (min-width: 1200px)";
-            } else if (rootFontSize === 15) {
-                message += "Media query: (max-width: 1200px)";
-            } else if (rootFontSize === 14) {
-                message += "Media query: (max-width: 992px)";
-            } else if (rootFontSize === 13) {
-                message += "Media query: (max-width: 768px)";
-            } else if (rootFontSize === 12) {
-                message += "Media query: (max-width: 576px)";
-            } else {
-                message += "Unknown media query or font size.";
+            const styles = getComputedStyle(document.documentElement);
+            let message = 'CSS Variables Report:<br>';
+
+            for (let i = 0; i < styles.length; i++) {
+                const name = styles[i];
+                if (name.startsWith('--')) {
+                    const value = styles.getPropertyValue(name).trim();
+                    let valueInPixels = value;
+                    let valueInRems = value;
+                    let valueInPercent = value;
+
+                    if (value.endsWith('rem')) {
+                        const remValue = parseFloat(value);
+                        valueInPixels = `${remValue * rootFontSize}px`;
+                        valueInPercent = `${(remValue / parseFloat(getComputedStyle(document.documentElement).fontSize)) * 100}%`;
+                    } else if (value.endsWith('px')) {
+                        const pxValue = parseFloat(value);
+                        valueInRems = `${pxValue / rootFontSize}rem`;
+                        valueInPercent = `${(pxValue / parseFloat(getComputedStyle(document.documentElement).fontSize)) * 100}%`;
+                    } else if (value.endsWith('%')) {
+                        const percentValue = parseFloat(value);
+                        valueInPixels = `${(percentValue / 100) * rootFontSize}px`;
+                        valueInRems = `${(percentValue / 100)}rem`;
+                    }
+
+                    message += `${name}: ${value} (${valueInPixels}, ${valueInRems}, ${valueInPercent})<br>`;
+                }
             }
 
             console.log(message);
-            reportDiv.innerText = message;
+            reportDiv.innerHTML = message;
         }
 
         window.addEventListener('resize', reportMediaQueryChanges);
