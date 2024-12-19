@@ -61,7 +61,7 @@
             margin: 0 auto;
             grid-template-rows: repeat(auto-fill, var(--app-min-row-height)); /* 50px to rem */
             gap: var(--app-spacing); /* Using the gap variable */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 -4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 var(--app-spacing) calc(var(--app-spacing) + var(--pixel))     rgba(0, 0, 0, 0.1), 0 -4px 6px rgba(0, 0, 0, 0.1);
         }
 
         /* General Container */
@@ -77,3 +77,31 @@
             padding: var(--app-padding); /* Using the padding variable */
             border: var(--app-border-width) solid var(--app-border-color); /* Using the border color variable */
         }
+
+        /* 
+        Card has 3 parts the frame: content-card, 
+        with children  heading <h1> and paragraph <p>
+        */
+        .card {
+            background-color: #e3f2fd; /* Light neutral background for contrast */
+            border-radius: 8px; /* Smooth rounded corners */
+            padding: 40px 20px; /* Comfortable spacing */
+            max-width: 900px; /* Constrain width for readability */
+            margin: 30px auto; /* Center on the page with margin spacing */
+            text-align: center; /* Center-align text for a header feel */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle elevation */
+            font-family: Arial, sans-serif; /* Clean, modern font */
+        }       
+        .card h1 {
+            font-size: 2.5rem; /* Prominent heading */
+            font-weight: bold; /* Emphasize heading */
+            color: #343a40; /* Dark gray for readability */
+            margin-bottom: 20px; /* Space between heading and intro */
+        }
+        .card p {
+            font-size: 1.2rem; /* Larger than regular text for emphasis */
+            line-height: 1.8; /* Comfortable line spacing for readability */
+            color: #6c757d; /* Medium gray for contrast against heading */
+            margin: 0; /* Remove default margin */
+        }
+        
