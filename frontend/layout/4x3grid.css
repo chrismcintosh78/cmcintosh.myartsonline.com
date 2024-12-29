@@ -1,0 +1,428 @@
+/* SPLASH PAGE TEMPLATE */
+/* 4 ROWS / 3 COLUMNS */
+
+:root {
+    --app-gutter-width: 1.25rem; /* 20px equivalent */
+    --app-gap-size: 0.7rem; /* Default gap size */
+    --color-base: #007BFF; /* Base color (blue) */
+    --color-split1: #FF9800; /* Split complementary (orange) */
+    --color-split2: #4CAF50; /* Split complementary (green) */
+}
+
+/* BODY TAG DESIGN */
+body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: linear-gradient(to top, #333333 30%, rgba(51, 51, 51, 0) 100%), url('img/bg.png');
+
+    margin: 0 var(--app-gutter-width); /* Left and right margin */
+    padding: 0;
+    height: 100vh;
+    gap: var(--app-gap-size);
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 576px) {
+    body {
+        font-size: 14px;
+        --app-gutter-width: 0.625rem; /* 10px equivalent */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+        --app-gutter-width: 0.9375rem; /* 15px equivalent */
+    }
+}
+
+@media screen and (max-width: 992px) {
+    body {
+        font-size: 18px;
+        --app-gutter-width: 1.25rem; /* 20px equivalent */
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    body {
+        font-size: 20px;
+        --app-gutter-width: 1.5625rem; /* 25px equivalent */
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    body {
+        font-size: 22px;
+        --app-gutter-width: 1.875rem; /* 30px equivalent */
+    }
+}
+
+/* CLASS SKELETONS FOR GRID ITEMS */
+.outline {
+    border: 1px solid #fff;
+}   
+/* Span 1 row and 1 column */
+._1r1c {
+    grid-row: span 1;
+    grid-column: span 1;    
+}
+
+/* Span 1 row and 2 columns */
+._1r2c {
+    grid-row: span 1;
+    grid-column: span 2;
+}
+
+/* Span 1 row and 3 columns */
+._1r3c {
+    grid-row: span 1;
+    grid-column: span 3;
+}
+
+/* Span 2 rows and 3 columns */
+._2r3c {
+    grid-row: span 2;
+    grid-column: span 3;
+}
+
+/* Flex Classes */
+.flx-item-grow {
+    display:flex;
+    flex-grow: 1;
+}
+
+.flx-item-shrink {
+    display:flex;
+    flex-shrink: 1;
+}
+
+.flx-box {
+    display: flexbox;
+    flex-direction: column; /* Default to column */
+}
+
+.flx-box-row{       
+    display: flexbox;
+    flex-direction: row;
+}
+
+.flx-align-start {
+    align-items: flex-start;
+}
+
+.flx-align-center {
+    align-items: center;
+}
+
+.flx-align-end {
+    align-items: flex-end;
+}
+
+.flx-just-start {
+    justify-content: flex-start;
+}
+
+.flx-just-center {
+    justify-content: center;
+}
+
+.flx-just-end {
+    justify-content: flex-end;
+}
+
+.flx-just-between {
+    justify-content: space-between;
+}
+
+.flx-just-around {
+    justify-content: space-around;
+}
+
+/* Brand and Navigation Component Classes */
+.brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 1rem;
+    
+    i {
+        margin-right: 0.5rem; /* Adjust as needed */
+    }
+    
+    span {
+        font-weight: bold;
+    }
+}
+
+nav {
+    display: flex;
+    flex-direction: row; /* Default to horizontal */
+    padding: inherit;
+    
+    &.nav-dir-vertical {
+        flex-direction: column;
+    }
+    
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row; /* Default to horizontal */
+        padding: 0;
+        margin: 0;
+        
+        &.nav-dir-vertical {
+            flex-direction: column;
+        }
+
+    }
+    
+    .nav-a {
+        display:block;
+
+        text-decoration: none;
+        color: inherit; /* Use current text color */
+        transition: background-color 0.8s, border-radius 0.8s;
+    }
+    .nav-a:hover {
+        color:black;
+        background-color: #CCC;  
+        border-radius: .6rem;
+    }
+}
+
+/* Split Complementary Color Scheme */
+/* Dark Navigation */
+.nav-dark {
+    background-color: #333;
+    color: #FFF;
+
+    .nav-a {
+        color: var(--color-split1); /* Orange */
+    }
+    border:.1rem solid white
+}
+
+/* Light Navigation */
+.nav-light {
+    background-color: #FFF;
+    color: #333;
+
+    .nav-a {
+        color: var(--color-split2); /* Green */
+    }       
+}
+.fs-07 {
+    font-size: .7rem; /* 75% of the root font size */
+}
+.fs-08 {
+    font-size: .8rem; /* 75% of the root font size */
+}
+.fs-09{
+    font-size: .9rem; /* 100% of the root font size (default) */
+}
+
+.fs-1-5 {
+    font-size: 1.5rem; /* 150% of the root font size */
+}
+/* Margin Utility Classes */
+.m-0 { margin: 0; }
+.m-0-2 { margin: 0.2rem; }
+.m-0-4 { margin: 0.4rem; }
+.m-0-6 { margin: 0.6rem; }
+.m-0-8 { margin: 0.8rem; }
+.m-1 { margin: 1rem; }
+.m-1-2 { margin: 1.2rem; }
+.m-1-4 { margin: 1.4rem; }
+.m-1-6 { margin: 1.6rem; }
+.m-1-8 { margin: 1.8rem; }
+.m-2 { margin: 2rem; }
+.m-2-2 { margin: 2.2rem; }
+.m-2-4 { margin: 2.4rem; }
+.m-2-6 { margin: 2.6rem; }
+.m-2-8 { margin: 2.8rem; }
+.m-3 { margin: 3rem; }
+
+/* Margin Top Utility Classes */
+.mt-0 { margin-top: 0; }
+.mt-0-2 { margin-top: 0.2rem; }
+.mt-0-4 { margin-top: 0.4rem; }
+.mt-0-6 { margin-top: 0.6rem; }
+.mt-0-8 { margin-top: 0.8rem; }
+.mt-1 { margin-top: 1rem; }
+.mt-1-2 { margin-top: 1.2rem; }
+.mt-1-4 { margin-top: 1.4rem; }
+.mt-1-6 { margin-top: 1.6rem; }
+.mt-1-8 { margin-top: 1.8rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-2-2 { margin-top: 2.2rem; }
+.mt-2-4 { margin-top: 2.4rem; }
+.mt-2-6 { margin-top: 2.6rem; }
+.mt-2-8 { margin-top: 2.8rem; }
+.mt-3 { margin-top: 3rem; }
+
+/* Margin Right Utility Classes */
+.mr-0 { margin-right: 0; }
+.mr-0-2 { margin-right: 0.2rem; }
+.mr-0-4 { margin-right: 0.4rem; }
+.mr-0-6 { margin-right: 0.6rem; }
+.mr-0-8 { margin-right: 0.8rem; }
+.mr-1 { margin-right: 1rem; }
+.mr-1-2 { margin-right: 1.2rem; }
+.mr-1-4 { margin-right: 1.4rem; }
+.mr-1-6 { margin-right: 1.6rem; }
+.mr-1-8 { margin-right: 1.8rem; }
+.mr-2 { margin-right: 2rem; }
+.mr-2-2 { margin-right: 2.2rem; }
+.mr-2-4 { margin-right: 2.4rem; }
+.mr-2-6 { margin-right: 2.6rem; }
+.mr-2-8 { margin-right: 2.8rem; }
+.mr-3 { margin-right: 3rem; }
+
+/* Margin Bottom Utility Classes */
+.mb-0 { margin-bottom: 0; }
+.mb-0-2 { margin-bottom: 0.2rem; }
+.mb-0-4 { margin-bottom: 0.4rem; }
+.mb-0-6 { margin-bottom: 0.6rem; }
+.mb-0-8 { margin-bottom: 0.8rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-1-2 { margin-bottom: 1.2rem; }
+.mb-1-4 { margin-bottom: 1.4rem; }
+.mb-1-6 { margin-bottom: 1.6rem; }
+.mb-1-8 { margin-bottom: 1.8rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-2-2 { margin-bottom: 2.2rem; }
+.mb-2-4 { margin-bottom: 2.4rem; }
+.mb-2-6 { margin-bottom: 2.6rem; }
+.mb-2-8 { margin-bottom: 2.8rem; }
+.mb-3 { margin-bottom: 3rem; }
+
+/* Margin Left Utility Classes */
+.ml-0 { margin-left: 0; }
+.ml-0-2 { margin-left: 0.2rem; }
+.ml-0-4 { margin-left: 0.4rem; }
+.ml-0-6 { margin-left: 0.6rem; }
+.ml-0-8 { margin-left: 0.8rem; }
+.ml-1 { margin-left: 1rem; }
+.ml-1-2 { margin-left: 1.2rem; }
+.ml-1-4 { margin-left: 1.4rem; }
+.ml-1-6 { margin-left: 1.6rem; }
+.ml-1-8 { margin-left: 1.8rem; }
+.ml-2 { margin-left: 2rem; }
+.ml-2-2 { margin-left: 2.2rem; }
+.ml-2-4 { margin-left: 2.4rem; }
+.ml-2-6 { margin-left: 2.6rem; }
+.ml-2-8 { margin-left: 2.8rem; }
+.ml-3 { margin-left: 3rem; }
+
+/* Padding Utility Classes */
+.p-0 { padding: 0; }
+.p-0-2 { padding: 0.2rem; }
+.p-0-4 { padding: 0.4rem; }
+.p-0-6 { padding: 0.6rem; }
+.p-0-8 { padding: 0.8rem; }
+.p-1 { padding: 1rem; }
+.p-1-2 { padding: 1.2rem; }
+.p-1-4 { padding: 1.4rem; }
+.p-1-6 { padding: 1.6rem; }
+.p-1-8 { padding: 1.8rem; }
+.p-2 { padding: 2rem; }
+.p-2-2 { padding: 2.2rem; }
+.p-2-4 { padding: 2.4rem; }
+.p-2-6 { padding: 2.6rem; }
+.p-2-8 { padding: 2.8rem; }
+.p-3 { padding: 3rem; }
+
+/* Padding Top Utility Classes */
+.pt-0 { padding-top: 0; }
+.pt-0-2 { padding-top: 0.2rem; }
+.pt-0-4 { padding-top: 0.4rem; }
+.pt-0-6 { padding-top: 0.6rem; }
+.pt-0-8 { padding-top: 0.8rem; }
+.pt-1 { padding-top: 1rem; }
+.pt-1-2 { padding-top: 1.2rem; }
+.pt-1-4 { padding-top: 1.4rem; }
+.pt-1-6 { padding-top: 1.6rem; }
+.pt-1-8 { padding-top: 1.8rem; }
+.pt-2 { padding-top: 2rem; }
+.pt-2-2 { padding-top: 2.2rem; }
+.pt-2-4 { padding-top: 2.4rem; }
+.pt-2-6 { padding-top: 2.6rem; }
+.pt-2-8 { padding-top: 2.8rem; }
+.pt-3 { padding-top: 3rem; }
+
+/* Padding Right Utility Classes */
+.pr-0 { padding-right: 0; }
+.pr-0-2 { padding-right: 0.2rem; }
+.pr-0-4 { padding-right: 0.4rem; }
+.pr-0-6 { padding-right: 0.6rem; }
+.pr-0-8 { padding-right: 0.8rem; }
+.pr-1 { padding-right: 1rem; }
+.pr-1-2 { padding-right: 1.2rem; }
+.pr-1-4 { padding-right: 1.4rem; }
+.pr-1-6 { padding-right: 1.6rem; }
+.pr-1-8 { padding-right: 1.8rem; }
+.pr-2 { padding-right: 2rem; }
+.pr-2-2 { padding-right: 2.2rem; }
+.pr-2-4 { padding-right: 2.4rem; }
+.pr-2-6 { padding-right: 2.6rem; }
+.pr-2-8 { padding-right: 2.8rem; }
+.pr-3 { padding-right: 3rem; }
+
+/* Padding Bottom Utility Classes */
+.pb-0 { padding-bottom: 0; }
+.pb-0-2 { padding-bottom: 0.2rem; }
+.pb-0-4 { padding-bottom: 0.4rem; }
+.pb-0-6 { padding-bottom: 0.6rem; }
+.pb-0-8 { padding-bottom: 0.8rem; }
+.pb-1 { padding-bottom: 1rem; }
+.pb-1-2 { padding-bottom: 1.2rem; }
+.pb-1-4 { padding-bottom: 1.4rem; }
+.pb-1-6 { padding-bottom: 1.6rem; }
+.pb-1-8 { padding-bottom: 1.8rem; }
+.pb-2 { padding-bottom: 2rem; }
+.pb-2-2 { padding-bottom: 2.2rem; }
+.pb-2-4 { padding-bottom: 2.4rem; }
+.pb-2-6 { padding-bottom: 2.6rem; }
+.pb-2-8 { padding-bottom: 2.8rem; }
+.pb-3 { padding-bottom: 3rem; }
+
+/* Padding Left Utility Classes */
+.pl-0 { padding-left: 0; }
+.pl-0-2 { padding-left: 0.2rem; }
+.pl-0-4 { padding-left: 0.4rem; }
+.pl-0-6 { padding-left: 0.6rem; }
+.pl-0-8 { padding-left: 0.8rem; }
+.pl-1 { padding-left: 1rem; }
+.pl-1-2 { padding-left: 1.2rem; }
+.pl-1-4 { padding-left: 1.4rem; }
+.pl-1-6 { padding-left: 1.6rem; }
+.pl-1-8 { padding-left: 1.8rem; }
+.pl-2 { padding-left: 2rem; }
+.pl-2-2 { padding-left: 2.2rem; }
+.pl-2-4 { padding-left: 2.4rem; }
+.pl-2-6 { padding-left: 2.6rem; }
+.pl-2-8 { padding-left: 2.8rem; }
+.pl-3 { padding-left: 3rem; }
+
+/* Rounded Corner Utility Classes */
+.rounded-0 { border-radius: 0; }
+.rounded-0-2 { border-radius: 0.2rem; }
+.rounded-0-4 { border-radius: 0.4rem; }
+.rounded-0-6 { border-radius: 0.6rem; }
+.rounded-0-8 { border-radius: 0.8rem; }
+.rounded-1 { border-radius: 1rem; }
+.rounded-1-2 { border-radius: 1.2rem; }
+.rounded-1-4 { border-radius: 1.4rem; }
+.rounded-1-6 { border-radius: 1.6rem; }
+.rounded-1-8 { border-radius: 1.8rem; }
+.rounded-2 { border-radius: 2rem; }
+.rounded-2-2 { border-radius: 2.2rem; }
+.rounded-2-4 { border-radius: 2.4rem; }
+.rounded-2-6 { border-radius: 2.6rem; }
+.rounded-2-8 { border-radius: 2.8rem; }
+.rounded-3 { border-radius: 3rem; }

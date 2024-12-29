@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="161.58804mm"
+   height="172.53392mm"
+   viewBox="0 0 161.58804 172.53392"
+   version="1.1"
+   id="svg13883"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="concept.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview13885"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.69308361"
+     inkscape:cx="305.15799"
+     inkscape:cy="501.38251"
+     inkscape:window-width="1920"
+     inkscape:window-height="982"
+     inkscape:window-x="0"
+     inkscape:window-y="26"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs13880" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-24.39287,-56.007774)">
+    <g
+       fill="none"
+       fill-rule="evenodd"
+       id="g11310"
+       transform="matrix(0.7667925,0,0,0.79279511,26.583331,167.17648)">
+      <path
+         fill="currentColor"
+         d="m 19.83,4.829 c 0.09143,0.3447065 -0.0076,0.712016 -0.26,0.964 L 17.804,7.56 c 2.782217,2.828567 -1.415089,7.024883 -4.243,4.242 l -1.767,1.768 c -0.542936,0.543089 -1.470027,0.2969 -1.672,-0.444 L 9.085,9.329 6.287,12.127 7.6752382,14.209622 11.535,20 H 14 c 1.333333,0 1.333333,2 0,2 H 8 C 6.6666672,22 6.6666672,20 8,20 H 9.13 L 4.622,13.237 C 4.0929852,12.443647 4.1976294,11.387159 4.872,10.713 L 8.478,7.107 7.998,5.349 C 7.9037524,5.0027956 8.002208,4.632633 8.256,4.379 L 10.378,2.257 C 10.63184,2.003565 11.001975,1.9054983 11.348,2 l 7.778,2.12 c 0.343992,0.094073 0.611854,0.3642205 0.703,0.709 m -4.855,5.56 c 0.942526,0.910322 2.324322,-0.4714736 1.414,-1.414 z"
+         id="path11308-6"
+         sodipodi:nodetypes="ccccccccccssssccccccccccccc" />
+      <path
+         d="M 24,0 V 24 H 0 V 0 Z m -11.406,23.258 -0.012,0.002 -0.071,0.035 -0.02,0.004 -0.014,-0.004 -0.071,-0.036 c -0.01,-0.003 -0.019,0 -0.024,0.006 l -0.004,0.01 -0.017,0.428 0.005,0.02 0.01,0.013 0.104,0.074 0.015,0.004 0.012,-0.004 0.104,-0.074 0.012,-0.016 0.004,-0.017 -0.017,-0.427 c -0.002,-0.01 -0.009,-0.017 -0.016,-0.018 m 0.264,-0.113 -0.014,0.002 -0.184,0.093 -0.01,0.01 -0.003,0.011 0.018,0.43 0.005,0.012 0.008,0.008 0.201,0.092 c 0.012,0.004 0.023,0 0.029,-0.008 l 0.004,-0.014 -0.034,-0.614 c -0.003,-0.012 -0.01,-0.02 -0.02,-0.022 m -0.715,0.002 a 0.023,0.023 0 0 0 -0.027,0.006 l -0.006,0.014 -0.034,0.614 c 0,0.012 0.007,0.02 0.017,0.024 l 0.015,-0.002 0.201,-0.093 0.01,-0.008 0.003,-0.011 0.018,-0.43 -0.003,-0.012 -0.01,-0.01 z"
+         id="path11306-7" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;font-family:'Eras Bold ITC';-inkscape-font-specification:'Eras Bold ITC';fill:#000000;stroke-width:0.79375"
+       x="45.87112"
+       y="131.49826"
+       id="text19460"><tspan
+         sodipodi:role="line"
+         id="tspan19458"
+         style="stroke-width:0.79375"
+         x="45.87112"
+         y="131.49826">Lamp</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;font-family:'Eras Bold ITC';-inkscape-font-specification:'Eras Bold ITC';fill:#000000;stroke-width:0.79375"
+       x="45.381626"
+       y="140.63054"
+       id="text19464"><tspan
+         sodipodi:role="line"
+         id="tspan19462"
+         style="stroke-width:0.79375"
+         x="45.381626"
+         y="140.63054">Stack</tspan></text>
+    <path
+       style="stroke-width:0.103353"
+       d="m 74.752931,89.489091 c -3.10782,-3.111955 -7.27087,-4.825545 -11.72228,-4.825545 A 16.497184,16.497184 0 0 0 46.494195,101.2 c 0,4.81831 1.84692,9.32553 5.064286,12.36514 l 0.45062,0.42271 c 1.86138,1.74046 4.40696,4.12481 4.40696,6.22908 v 4.13411 h 4.96094 v -13.52785 l -4.57646,-2.5952 1.88929,-2.71611 4.34082,2.3027 4.26744,-2.31407 1.97404,2.6541 -4.58784,2.68718 v 13.50925 h 4.96094 v -4.13411 c 0,-2.05466 2.51768,-4.43694 4.35632,-6.1774 l 0.50747,-0.48163 c 3.30935,-3.1595 5.05808,-7.43727 5.05808,-12.3579 a 16.449641,16.449641 0 0 0 -4.81417,-11.710909 z"
+       id="path20794" />
+    <path
+       style="stroke-width:0.103353"
+       d="m 56.416061,141.87979 h 13.22917 v 3.30729 h -13.22917 z"
+       id="path20792" />
+    <path
+       style="stroke-width:0.103353"
+       d="m 58.069711,146.84072 h 9.92187 v 3.3073 h -9.92187 z"
+       id="path19554" />
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;font-family:'Eras Bold ITC';-inkscape-font-specification:'Eras Bold ITC';display:inline;fill:#000000;stroke-width:0.79375"
+       x="38.541012"
+       y="184.39182"
+       id="text17354"><tspan
+         sodipodi:role="line"
+         id="tspan17352"
+         style="font-size:12.7px;stroke-width:0.79375"
+         x="38.541012"
+         y="184.39182">ampStack AI</tspan></text>
+  </g>
+</svg>

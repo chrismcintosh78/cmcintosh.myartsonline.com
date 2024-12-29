@@ -7,5 +7,7 @@
 			"path": "../../html"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "cmcintosh.myartsonline.com"
+	}
 }

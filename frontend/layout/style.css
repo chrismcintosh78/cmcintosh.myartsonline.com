@@ -1,4 +1,4 @@
-        :root {
+:root {
             /* General Settings */
             --pixel: 0.0625rem; /* Pixel variable (1px) */
             /* Typography Settings */
@@ -15,6 +15,15 @@
             /* Color Settings */
             --app-border-color: #ccc; /* Border color variable */
             --body-bg-color: #f5f5f5; /* Light neutral background color */
+
+            /* New Color Variables */
+            --app-primary-color: #007bff;
+            --app-primary-light: #66b2ff;
+            --app-primary-dark: #0056b3;
+            --app-secondary-color: #6c757d;
+            --app-secondary-light: #a6a9ad;
+            --app-secondary-dark: #494e52;
+            --app-light-text:white;
         }
 
         @media (max-width: 1200px) {
@@ -72,12 +81,63 @@
         /* Layout Row */
         .layout-row {
             display: flex;
+
+            padding: var(--app-padding); /* Using the padding variable */
+        }
+        /*NAVIGATION CLASSES*/
+        .navbar{
+            flex-grow: 1;
+            display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: var(--app-padding); /* Using the padding variable */
-            border: var(--app-border-width) solid var(--app-border-color); /* Using the border color variable */
-        }
+            padding: var(--app-spacing);
 
+            .navbar-brand {
+                font-size: 1.5em;
+                font-weight: bold;
+            }    
+            
+            .navbar-nav-horizontal {
+                list-style: none;
+                display: flex;
+                margin: 0;
+                padding: 0;
+
+                .navbar-item {
+                    margin-left: calc(var(--app-spacing) * 4);
+
+                    .navbar-link {
+                        text-decoration: none;
+                        color: #000;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .navbar-link:hover {
+                        text-decoration: none;
+                        color: #000;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+        .navbar-light{
+            background-color: var(--app-primary-color);
+            color: var(--app-light-text);
+        }
+        
+        /* Placeholder icons */
+        .icon-home::before {
+            content: "\1F3E0"; /* Unicode for home icon */
+        }
+        
+        .icon-info::before {
+            content: "\2139"; /* Unicode for info icon */
+        }
+        
+        .icon-contact::before {
+            content: "\2709"; /* Unicode for envelope icon */
+        }
         /* 
         Card has 3 parts the frame: content-card, 
         with children  heading <h1> and paragraph <p>
@@ -104,4 +164,3 @@
             color: #6c757d; /* Medium gray for contrast against heading */
             margin: 0; /* Remove default margin */
         }
-        
